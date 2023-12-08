@@ -1,2 +1,2 @@
 # Online_Ticaret_Sitesi
-MVC 
+Programlma 2 dersi kapsamında ekip arakadaşımla belirlediğimiz Online Ticaret Sitesi konulu ASP.NET MVS Sql kullanarak yaptığımız web geliştirme projesidir.

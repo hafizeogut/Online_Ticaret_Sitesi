@@ -25,6 +25,7 @@ namespace E_ticaret_sitesi.Models.Siniflar
         public string PersonelGorsel { get; set; }
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
+
         public Departman Departman { get; set; }
 
     }

@@ -29,6 +29,6 @@ namespace E_ticaret_sitesi.Models.Siniflar
         public string UrunGorsel { get; set; }
         public Kategori Kategori { get; set; } // her urunun sadece 1 tane kategorisi olduğundan bu tanımlama yapılmıştır.
 
-        public SatisHareket SatisHareket { get; set; }
+        public ICollection<SatisHareket> SatisHarekets { get; set; }
     }
 }

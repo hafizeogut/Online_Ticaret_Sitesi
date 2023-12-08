@@ -17,8 +17,8 @@ namespace E_ticaret_sitesi.Models.Siniflar
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
         public decimal ToplamTutar { get; set; }
-        public ICollection<Urun> Uruns { get; set; }
-        public ICollection<Cariler> Carilers { get; set; }
-        public ICollection<Personel> Personels { get; set; }
+        public Urun Urun { get; set; }
+        public Cariler Cariler { get; set; }
+        public Personel Personel { get; set; }
     }
 }

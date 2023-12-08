@@ -8,6 +8,7 @@ namespace E_ticaret_sitesi.Models.Siniflar
 {
     public class SatisHareket
     {
+
         [Key]
         public int Satisid { get; set; }
         //ürün

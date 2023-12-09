@@ -1,4 +1,4 @@
-﻿
+﻿@model E_ticaret_sitesi.Models.Siniflar.Kategori
 @{
     ViewBag.Title = "KategoriEkle";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -10,7 +10,11 @@
 <br />
 
 <form class="form-group" method="post">
-
+    @* Html hazır format kulanma Html Helper *@
+    @Html.LabelFor(x => x.KategoriAd)
+    @Html.TextBoxFor(x => x.KategoriAd,new {@class ="form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
 
 </form>
 

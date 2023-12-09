@@ -20,8 +20,9 @@
         <tr>
             <td>@k.KategoriID</td>
             <td>@k.KategoriAd</td>
-            <td><a href="#" class="btn btn-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+            @* KategoriController altında bulunan KategorSil git k.KategoriId ye göre*@
+            <td><a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a></td>
 
         </tr>
     }

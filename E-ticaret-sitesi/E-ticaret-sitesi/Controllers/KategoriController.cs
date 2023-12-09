@@ -34,5 +34,25 @@ namespace E_ticaret_sitesi.Controllers
             //Action metodu, bir formdan alınan kategori bilgilerini veritabanına eklemek için kullanılır.
 
         }
+        public ActionResult KategoriSil(int id)
+        {
+            var kate = c.Kategoris.Find(id);
+            c.Kategoris.Remove(kate);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult KategoriGetir(int id)
+        {
+            var kategori = c.Kategoris.Find(id);
+            return View("KategoriGetir", kategori);
+         
+        }
+        public ActionResult KategoriGuncelle(Kategori k)
+        {
+            var ktgr = c.Kategoris.Find(k.KategoriID);//kategoriId ye göre bulundu
+            ktgr.KategoriAd = k.KategoriAd;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

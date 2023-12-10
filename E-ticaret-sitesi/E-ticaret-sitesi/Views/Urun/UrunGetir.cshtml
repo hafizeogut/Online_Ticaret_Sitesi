@@ -1,20 +1,17 @@
 ﻿@model E_ticaret_sitesi.Models.Siniflar.Urun
 @{
-    ViewBag.Title = "YeniUrun";
+    ViewBag.Title = "UrunGetir";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
+<br />
+<h2>Ürün Güncelleme Sayfası</h2>
 
 <br />
 
-<h2>Yeni Ürün Sayfası</h2>
-
-<br />
-
-<form action="from-group" method="post">
-
-    
-
-
+@using (Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.Urunid)
+    @* Null değer dçndürmemesi adına önemli *@
     @Html.LabelFor(x => x.UrunAd)
     @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
     <br />
@@ -38,7 +35,7 @@
 
     @Html.LabelFor(x => x.Kategori.KategoriID)
     @*@Html.TextBoxFor(x => x.Kategoriid, new { @class = "form-control" })*@
-    @Html.DropDownListFor(x => x.Kategoriid,(List<SelectListItem>)ViewBag.dgr1,new {@class ="form-control"})
+    @Html.DropDownListFor(x => x.Kategoriid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
 
     <br />
 
@@ -51,8 +48,9 @@
     @Html.LabelFor(x => x.Durum)
     @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
     <br />
-    <button class="btn btn-primary">Kaydet</button>
+    <button class="btn btn-warning">Güncelle</button>
 
 
 
-</form>
+}
+

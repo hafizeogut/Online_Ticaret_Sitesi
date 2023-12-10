@@ -16,6 +16,7 @@
         <th>KATEGORİ</th>
         <th>GÖRSEL</th>
         <th>SİL</th>
+        <th>GÜNCELLE</th>
     </tr>
     @foreach (var u in Model)
     {
@@ -30,6 +31,8 @@
         @*<td>@u.Kategori</td> E_ticaret_sitesi.Models.Siniflar.Kategori*@
         <td>@u.UrunGorsel</td> 
         <td><a href="/Urun/UrunSil/@u.Urunid" class="btn btn-danger"> Sil</a></td>
+
+        <td><a href="/Urun/UrunGetir/@u.Urunid" class="btn btn-success"> Güncelle</a></td>
     </tr>
     }
 </table>

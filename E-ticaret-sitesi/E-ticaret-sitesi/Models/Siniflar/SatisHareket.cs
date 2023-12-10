@@ -18,8 +18,17 @@ namespace E_ticaret_sitesi.Models.Siniflar
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
         public decimal ToplamTutar { get; set; }
-        public Urun Urun { get; set; }
-        public Cariler Cariler { get; set; }
-        public Personel Personel { get; set; }
+
+
+
+        public int Urunid { set; get; }
+        public int Cariid { set; get; }
+        public int Personelid { set; get; }
+
+
+
+        public virtual Urun Urun { get; set; }
+        public virtual Cariler Cariler { get; set; }
+        public virtual Personel Personel { get; set; }
     }
 }

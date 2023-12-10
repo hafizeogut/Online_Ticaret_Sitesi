@@ -16,5 +16,18 @@ namespace E_ticaret_sitesi.Controllers
             var degerler = c.SatisHarekets.ToList();
             return View(degerler);
         }
+        [HttpGet]
+        public ActionResult YeniSatis()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult YeniSatis(SatisHareket s)
+        {
+            c.SatisHarekets.Add(s);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

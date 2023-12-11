@@ -19,6 +19,7 @@ namespace E_ticaret_sitesi.Models.Siniflar
         public decimal BirimFiyat { get; set; }
         public decimal Tutar { get; set; }
 
-        public Faturalar Faturalar { get; set; }
+        public int Faturaid { get; set; }
+        public virtual Faturalar Faturalar { get; set; }
     }
 }

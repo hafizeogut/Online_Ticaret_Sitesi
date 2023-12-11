@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using E_ticaret_sitesi.Models.Siniflar;
+using E_ticaret_sitesi.Models.Siniflar; 
+
 namespace E_ticaret_sitesi.Controllers
 {
     public class DepartmanController : Controller
@@ -15,7 +16,7 @@ namespace E_ticaret_sitesi.Controllers
             var degerler = c.Departmans.Where(x => x.Durum == true).ToList();
             return View(degerler);
         }
-        [HttpGet]//
+        [HttpGet]//Sayfa Aöıldığında
         public ActionResult DepartmanEkle()
         {
             return View();

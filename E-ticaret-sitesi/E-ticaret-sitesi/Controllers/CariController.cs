@@ -62,7 +62,7 @@ namespace E_ticaret_sitesi.Controllers
         public ActionResult MusteriSatis(int id)
         {
             var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
-            var cr = c.Carilers.Where(x => x.Cariid == id).Select(y => y.CariAd + "" + y.CariSoyad).FirstOrDefault();
+            var cr = c.Carilers.Where(x => x.Cariid == id).Select(y => y.CariAd + "  " + y.CariSoyad).FirstOrDefault();
             ViewBag.cari = cr;
             return View(degerler);
 

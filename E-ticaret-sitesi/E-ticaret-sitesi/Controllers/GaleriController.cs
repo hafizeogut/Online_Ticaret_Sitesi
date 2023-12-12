@@ -13,7 +13,8 @@ namespace E_ticaret_sitesi.Controllers
         Context c = new Context();
         public ActionResult Index()
         {
-            return View();
+            var degerler = c.Uruns.ToList();
+            return View(degerler);
         }
     }
 }

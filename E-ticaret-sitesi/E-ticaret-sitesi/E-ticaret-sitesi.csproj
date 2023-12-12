@@ -130,6 +130,7 @@
     <Compile Include="Controllers\CariController.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
+    <Compile Include="Controllers\GaleriController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\istatistikController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
@@ -535,6 +536,7 @@
     <Content Include="Views\Fatura\FaturaDetay.cshtml" />
     <Content Include="Views\Fatura\YeniKalem.cshtml" />
     <Content Include="Views\istatistik\Index.cshtml" />
+    <Content Include="Views\Galeri\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

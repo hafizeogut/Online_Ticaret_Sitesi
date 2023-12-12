@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -261,6 +262,8 @@
     <Content Include="Web\src\scss\variables\_spacing.scss" />
     <Content Include="Web\src\scss\_global.scss" />
     <Content Include="Web\src\scss\_variables.scss" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
+    <Content Include="Views\Kategori\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,5 @@
-﻿
+﻿@using E_ticaret_sitesi.Models.Siniflar
+@model List<Kategori>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
@@ -8,16 +9,26 @@
     <tr>
         <th>ID</th>
         <th>Kategori Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
     </tr>
+    @foreach (var k in Model)
+    {
+
     <tr>
-        <td>1</td>
-        <td>Beyaz Eşya</td>
+        <td>
+            @k.KategoriID
+        </td>
+        <td>
+            @k.KategoriAd
+        </td>
+        <td><a href="/Kategori/KategoriSil/@k.KategoriID" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Kategori/KategoriGetir/@k.KategoriID" class="btn btn-success">Güncelle</a></td>
     </tr>
-    <tr>
-        <td>2</td>
-        <td>Telefon</td>
-    </tr>
+
+    }
+
 
 </table>
 
-<button class="btn btn-primary"> Yeni Kategori</button>
+<a href="/Kategori/KategoriEkle" class="btn btn-primary">Kategori Ekle</a>

@@ -5,9 +5,9 @@ using System.Web;
 
 namespace E_ticaret_sitesi.Models.Siniflar
 {
-    public class SinifGrup
+    public class SinifGrup2
     {
-        public string Sehir { get; set; }
-        public int Sayi { get; set; }//Bu sehirde kaç kişi var
+        public int Departman { get; set; }
+        public int Sayi { get; set; }//departmanda kaç kişi var?
     }
 }

@@ -138,6 +138,7 @@
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
+    <Compile Include="Controllers\SinifGrup.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Controllers\UrunDetayController.cs" />
     <Compile Include="Global.asax.cs">

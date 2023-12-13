@@ -81,5 +81,9 @@ namespace E_ticaret_sitesi.Controllers
             return View();
             
         }
+        public ActionResult KolayTablolar()
+        {
+            return View();
+        }
     }
 }

@@ -50,6 +50,11 @@ namespace E_ticaret_sitesi.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult PersonleListe()
+        {
+            var sorgu = c.Personels.ToList();
+            return View(sorgu);
+        }
         
          
     }

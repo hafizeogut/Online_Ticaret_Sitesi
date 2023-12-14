@@ -26,14 +26,14 @@ namespace E_ticaret_sitesi.Controllers
             var deger4 = c.Carilers.Count().ToString();
             ViewBag.d4 = deger4;
 
-            var deger5 = c.Uruns.Sum(x=>x.Stok).ToString();//Stoklara erişildi
+            var deger5 = c.Uruns.Sum(x => x.Stok).ToString();//Stoklara erişildi
             ViewBag.d5 = deger5;
 
             var deger6 = (from x in c.Uruns select x.Marka).Distinct().Count().ToString();
             ViewBag.d6 = deger6;
 
 
-            var deger7 = c.Uruns.Count(x => x.Stok<=20).ToString(); //Stok 20 den az kalmış ürünler sayıldı.
+            var deger7 = c.Uruns.Count(x => x.Stok <= 20).ToString(); //Stok 20 den az kalmış ürünler sayıldı.
             ViewBag.d7 = deger7;
 
             var deger8 = (from x in c.Uruns orderby x.SatisFiyat descending select x.UrunAd).FirstOrDefault();
@@ -63,8 +63,8 @@ namespace E_ticaret_sitesi.Controllers
             //OrderByDescending(z =>z.Count()) en üstekki değer doğrultusunda sırala
 
             //c.SatisHarekets.GroupBy(x => x.Urunid).OrderByDescending(z => z.Count()).Select(y => y.Key).FirstOrDefault()) Satısı en fazla olan id ye ulaşıldı
-            var deger13 = c.Uruns.Where(u => u.Urunid ==( c.SatisHarekets.GroupBy(x => x.Urunid).OrderByDescending(z => 
-            z.Count()).Select(y => y.Key).FirstOrDefault())).Select(k =>k.UrunAd).FirstOrDefault();
+            var deger13 = c.Uruns.Where(u => u.Urunid == (c.SatisHarekets.GroupBy(x => x.Urunid).OrderByDescending(z =>
+            z.Count()).Select(y => y.Key).FirstOrDefault())).Select(k => k.UrunAd).FirstOrDefault();
             ViewBag.d13 = deger13;
 
 
@@ -72,14 +72,14 @@ namespace E_ticaret_sitesi.Controllers
             ViewBag.d14 = deger14;
 
             DateTime bugun = DateTime.Today;
-            var deger15 = c.SatisHarekets.Count(x => x.Tarih==bugun).ToString();
+            var deger15 = c.SatisHarekets.Count(x => x.Tarih == bugun).ToString();
             ViewBag.d15 = deger15;
 
             var deger16 = c.SatisHarekets.Where(x => x.Tarih == bugun).Sum(y => y.ToplamTutar).ToString();
             ViewBag.d16 = deger16;
 
             return View();
-            
+
         }
         public ActionResult KolayTablolar()
         {
@@ -97,7 +97,7 @@ namespace E_ticaret_sitesi.Controllers
         {
             //Her bir departmanda kaç personel var sorusunun cevabı yanıtlanıyor?
             var sorgu2 = from x in c.Personels
-                         group x by x.Departmanid into g
+                         group x by x.Departman.DepartmanAd into g
                          select new SinifGrup2
                          {
                              Departman = g.Key,
@@ -105,5 +105,29 @@ namespace E_ticaret_sitesi.Controllers
                          };
             return PartialView(sorgu2.ToList());
         }
+        public PartialViewResult Partial2()
+        {
+            var sorgu = c.Carilers.ToList();
+            return PartialView(sorgu);
+        }
+        public PartialViewResult Partial3()
+        {
+            var sorgu = c.Uruns.ToList();
+            return PartialView(sorgu);
+        }
+        public PartialViewResult Partial4()
+        {
+            //Markaları ve markaların sayısına ulacağız
+            var sorguu = from x in c.Uruns
+                         group x by x.Marka into g
+                         select new SinifGrup3
+                         {
+                             marka = g.Key,
+                             sayi = g.Count()
+                         };
+            return PartialView(sorguu.ToList());
+        }
+
+
     }
 }

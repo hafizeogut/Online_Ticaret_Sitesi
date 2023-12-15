@@ -9,7 +9,7 @@ namespace E_ticaret_sitesi.Models.Siniflar
 {
     public class Kategori
     {
-        [Key]
+        [Key]        
         public int KategoriID { get; set; }
 
         [Column(TypeName = "Varchar")]

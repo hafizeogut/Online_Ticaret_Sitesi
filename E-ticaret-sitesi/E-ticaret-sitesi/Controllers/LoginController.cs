@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using E_ticaret_sitesi.Models.Siniflar;
 
 namespace E_ticaret_sitesi.Controllers
@@ -26,6 +27,30 @@ namespace E_ticaret_sitesi.Controllers
             c.Carilers.Add(p);
             c.SaveChanges();
             return PartialView();
+        }
+        [HttpGet]
+        public ActionResult CariLogin1()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CariLogin1(Cariler p)
+        {
+            var bilgiler = c.Carilers.FirstOrDefault
+                (x => x.CariMail == p.CariMail && x.CariSifre == p.CariSifre);
+            if (bilgiler != null)
+            {
+                FormsAuthentication.SetAuthCookie(bilgiler.CariMail, false);
+                Session["CariMail"] = bilgiler.CariMail.ToString();
+                return RedirectToAction("Index", "CariPanel");
+            }
+            else
+            {
+                return RedirectToAction("Index","Login");
+            }
+
+            
         }
     }
 }

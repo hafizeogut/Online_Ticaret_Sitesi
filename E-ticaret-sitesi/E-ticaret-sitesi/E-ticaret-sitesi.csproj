@@ -171,6 +171,9 @@
     <Compile Include="Models\Siniflar\SinifGrup3.cs" />
     <Compile Include="Models\Siniflar\Urun.cs" />
     <Compile Include="Models\Siniflar\Yapilacak.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2174,6 +2177,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Image\IMG-20170805-WA0080.jpg.jpg" />
     <Content Include="Image\WhatsApp Görsel 2023-07-18 saat 23.30.18.jpg.jpg" />
+    <Content Include="obj\Debug\E-ticaret-sitesi.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\E-ticaret-sitesi.dll" />
+    <Content Include="obj\Debug\E-ticaret-sitesi.pdb" />
     <Content Include="Ornek\script.js" />
     <Content Include="Ornek\style.css" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2679,6 +2685,13 @@
     <Content Include="AdminLTE-3.0.4\plugins\sweetalert2-theme-bootstrap-4\bootstrap-4.scss" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.js.map" />
     <Content Include="AdminLTE-3.0.4\README.md" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\E-ticaret-sitesi.csproj.CopyComplete" />
+    <Content Include="obj\Debug\E-ticaret-sitesi.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\E-ticaret-sitesi.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\Tsc.out" />
+    <Content Include="obj\Release\E-ticaret-sitesi.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Release\E-ticaret-sitesi.csprojAssemblyReference.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2916,9 +2929,11 @@
     <Content Include="Views\CariPanel\Index.cshtml" />
     <Content Include="Views\CariPanel\Siparislerim.cshtml" />
     <Content Include="Views\Alertler\Index.cshtml" />
+    <Content Include="Views\Urun\SatisYap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

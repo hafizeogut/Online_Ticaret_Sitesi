@@ -20,5 +20,14 @@ namespace E_ticaret_sitesi.Controllers
             ViewBag.m = mail;
             return View(degerler);
         }
+        public ActionResult Siparislerim()
+        {
+            var mail = (string)Session["CariMail"];//Session a sisteme girilen mail adresi atandı
+            var id = c.Carilers.Where(x => x.CariMail == mail.ToString()).Select(y
+                      => y.Cariid).FirstOrDefault();//Sisteme giriş yapılan mail adresinin idsi alındı
+
+            var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
+            return View(degerler);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -28,6 +29,14 @@ namespace E_ticaret_sitesi.Controllers
         [HttpPost]//Bir butona tıklandığı zaman bu metodu çalıstır
         public ActionResult PersonelEkle(Personel p)
         {
+            if (Request.Files.Count>0)
+            {
+                string dasyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dasyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGorsel="/Image/"+ dasyaadi + uzanti;
+            }
             c.Personels.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -42,6 +51,14 @@ namespace E_ticaret_sitesi.Controllers
         }
         public ActionResult PersonelGuncelle(Personel p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string dasyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "~/Image/" + dasyaadi + uzanti;
+                Request.Files[0].SaveAs(Server.MapPath(yol));
+                p.PersonelGorsel = "/Image/" + dasyaadi + uzanti;
+            }
             var prsn = c.Personels.Find(p.Personelid);
             prsn.PersonelAd = p.PersonelAd;
             prsn.PersonelSoyad = p.PersonelSoyad;

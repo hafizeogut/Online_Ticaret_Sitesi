@@ -154,3 +154,7 @@ C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\obj\Debug\E-ticaret-s
 C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\obj\Debug\E-ticaret-sitesi.csproj.CopyComplete
 C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\obj\Debug\E-ticaret-sitesi.dll
 C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\obj\Debug\E-ticaret-sitesi.pdb
+C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.dll
+C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.Mvc.dll
+C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.xml
+C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.Mvc.xml

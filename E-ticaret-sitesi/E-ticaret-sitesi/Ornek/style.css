@@ -1,0 +1,30 @@
+.input-file {
+        display: inherit; /* Bu stil, önceki 'display: none;' stilini iptal eder ve dosya yükleme alanını görünür yapar. */
+        background-color: #3498db; /* Dosya yükleme alanının arka plan rengi */
+        color: #fff; /* Dosya yükleme alanındaki metin rengi */
+        padding: 10px 15px; /* Dosya yükleme alanının iç kenar boşluğu */
+        cursor: pointer; /* Fare imleci dosya yükleme alanının üzerine geldiğinde el şeklini alır */
+        border-radius: 5px; /* Dosya yükleme alanının köşelerine yuvarlaklık ekler */
+        display: inline-block; /* Dosya yükleme alanını blok eleman yerine satır içi eleman olarak gösterir */
+    }
+
+     
+
+    /* Dosya yükleme alanı odaklandığında veya bir dosya seçildiğinde stil değişiklikleri */
+    .input-file:focus ,
+    .input-file.has-file {
+        background-color: #2980b9; /* Dosya yükleme alanı odaklandığında veya bir dosya seçildiğinde arka plan rengini değiştirir */
+    }
+
+        .input-file:focus,
+        .input-file.has-file {
+            content: 'Dosya Seçildi'; /* Dosya yükleme alanı odaklandığında veya bir dosya seçildiğinde görünen metin */
+            position: absolute; /* Metni mutlak bir konuma yerleştirir */
+            top: 0; /* Metnin üst kenarını en üstteki konuma yerleştirir */
+            right: 0; /* Metnin sağ kenarını en sağdaki konuma yerleştirir */
+            left: 0; /* Metnin sol kenarını en soldaki konuma yerleştirir */
+            padding: 10px 15px; /* Metnin iç kenar boşluğu */
+            background-color: #34495e; /* Metnin arka plan rengi */
+            color: #fff; /* Metnin metin rengi */
+            border-radius: 0 0 5px 5px; /* Metnin köşelerine yuvarlaklık ekler */
+        }

@@ -4,9 +4,14 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
+<link rel="stylesheet" type="text/css" href="~/Ornek/style.css">
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="~/Ornek/script.js"></script>
+
 <h2>Personel Güncelleme Ekranı</h2>
 
-@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post))
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
 <div class="form-group">
     @Html.HiddenFor(x => x.Personelid)
@@ -20,11 +25,14 @@
     <br />
 
     @Html.LabelFor(x => x.PersonelGorsel)
-    @Html.TextBoxFor(x => x.PersonelGorsel, new { @class = "form-control" })
+    <input type="file" name="PersonelGorsel" id="fileInput" class="input-file" onchange="dosyaSecildi(this)" />
+    @*onchange özelliği yerine jQuery kullanarak on fonksiyonu ile dosya seçme alanına bir olay dinleyici eklenmiştir. 
+        $(document).ready içinde bu işlem gerçekleştirilir ve dosya seçme alanı değiştiğinde dosyaSecildi fonksiyonu çağrılır.*@
     <br />
 
     @Html.LabelFor(x => x.Departman)
     @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
 
     <br />
 

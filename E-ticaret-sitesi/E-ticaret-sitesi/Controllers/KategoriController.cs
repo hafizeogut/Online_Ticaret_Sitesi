@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using E_ticaret_sitesi.Models.Siniflar;
+using PagedList;
+using PagedList.Mvc;
 
 namespace E_ticaret_sitesi.Controllers
 {
@@ -12,10 +14,10 @@ namespace E_ticaret_sitesi.Controllers
         // GET: Kategori
         //Contedxte tablolar tutuluyor.
         Context c = new Context();//Context sınıfından bir nesne oluşturuldu
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
             //var türü bütün değişkenleri alıyor
-            var degerler = c.Kategoris.ToList();
+            var degerler = c.Kategoris.ToList().ToPagedList(sayfa,4);
             return View(degerler);
         }
 

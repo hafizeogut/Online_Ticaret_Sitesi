@@ -8,14 +8,19 @@
 <h2>Yeni Kategori Sayfası</h2>
 
 <br />
+<script src="~/Scripts/jquery-3.3.1.js"></script>
 
 <form class="form-group" method="post">
     @* Html hazır format kulanma Html Helper *@
     @Html.LabelFor(x => x.KategoriAd)
-    @Html.TextBoxFor(x => x.KategoriAd,new {@class ="form-control" })
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-control" })
     <br />
-    <button class="btn btn-info">Kaydet</button>
-
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+    <script>
+        $('#Btn1').click(function () {
+            alert("Kategori başarılı bir şekilde eklendi.")
+        });
+    </script>
 </form>
 
 

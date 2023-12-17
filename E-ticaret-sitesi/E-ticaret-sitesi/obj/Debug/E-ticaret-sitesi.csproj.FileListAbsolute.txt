@@ -158,3 +158,5 @@ C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.dll
 C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.Mvc.dll
 C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.xml
 C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\bin\PagedList.Mvc.xml
+C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\obj\Debug\E_ticaret_sitesi.Migrations.denemekargo1.resources
+C:\Online_Ticaret_Sitesi\E-ticaret-sitesi\E-ticaret-sitesi\obj\Debug\E-ticaret-sitesi.csproj.GenerateResource.cache

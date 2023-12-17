@@ -13,7 +13,7 @@
 <form class="form-group" method="post">
     @* Html hazır format kulanma Html Helper *@
     @Html.LabelFor(x => x.TakipKodu)
-    <input type="text" name="TakipKodu" class="form-control" value="@ViewBag.takipkod"/>
+    <input type="text" value="@ViewBag.takipkod" class="form-control" readonly name="TakipKodu"/>
     <br />
 
     @Html.LabelFor(x => x.Personel)

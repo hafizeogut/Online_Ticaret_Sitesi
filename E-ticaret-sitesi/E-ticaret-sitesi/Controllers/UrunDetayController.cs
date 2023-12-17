@@ -12,7 +12,7 @@ namespace E_ticaret_sitesi.Controllers
         // GET: UrunDetay
         public ActionResult Index()
         {
-            Class1 cs = new Class1();
+            sinif cs = new sinif();
             //var degerler = c.Uruns.Where(x => x.Urunid == 1).ToList();
             cs.Deger1 = c.Uruns.Where(x => x.Urunid == 1).ToList();
             cs.Deger2 = c.Detays.Where(y => y.DetayID == 1).ToList();

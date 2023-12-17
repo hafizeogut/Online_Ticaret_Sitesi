@@ -29,5 +29,22 @@ namespace E_ticaret_sitesi.Controllers
             var degerler = c.SatisHarekets.Where(x => x.Cariid == id).ToList();
             return View(degerler);
         }
+
+        public ActionResult GelenMesajlar()
+        {
+            return View();
+        }
+        //[HttpGet]
+        //public ActionResult YeniMesaj()
+        //{
+        //    return View();
+            
+        //}
+        //[HttpPost]
+        //public ActionResult YeniMesaj()
+        //{
+        //    return View();
+
+        //}
     }
 }

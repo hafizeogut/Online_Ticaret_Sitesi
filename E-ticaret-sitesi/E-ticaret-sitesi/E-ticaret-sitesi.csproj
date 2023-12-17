@@ -144,11 +144,13 @@
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
+    <Compile Include="Controllers\GrafikController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\istatistikController.cs" />
     <Compile Include="Controllers\KargoController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MesajController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
     <Compile Include="Controllers\QRController.cs" />
     <Compile Include="Controllers\SatisController.cs" />
@@ -163,9 +165,12 @@
       <DependentUpon>202312162257078_denemekargo1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Siniflar\Admin.cs" />
     <Compile Include="Models\Siniflar\Cariler.cs" />
-    <Compile Include="Models\Siniflar\Class1.cs" />
+    <Compile Include="Models\Siniflar\Mesajlar.cs" />
+    <Compile Include="Models\Siniflar\sinif1.cs" />
+    <Compile Include="Models\Siniflar\sinif.cs" />
     <Compile Include="Models\Siniflar\Context.cs" />
     <Compile Include="Models\Siniflar\Departman.cs" />
     <Compile Include="Models\Siniflar\Detay.cs" />
@@ -177,6 +182,7 @@
     <Compile Include="Models\Siniflar\Kategori.cs" />
     <Compile Include="Models\Siniflar\Personel.cs" />
     <Compile Include="Models\Siniflar\SatisHareket.cs" />
+    <Compile Include="Models\Siniflar\sinif2.cs" />
     <Compile Include="Models\Siniflar\SinifGrup.cs" />
     <Compile Include="Models\Siniflar\SinifGrup2.cs" />
     <Compile Include="Models\Siniflar\SinifGrup3.cs" />
@@ -3025,11 +3031,20 @@
     <Content Include="Views\Kargo\YeniKargo.cshtml" />
     <Content Include="Views\Kargo\KargoTakip.cshtml" />
     <Content Include="Views\QR\Index.cshtml" />
+    <Content Include="Views\Grafik\Index.cshtml" />
+    <Content Include="Views\Grafik\Index2.cshtml" />
+    <Content Include="Views\Grafik\Index3.cshtml" />
+    <Content Include="Views\Grafik\Index4.cshtml" />
+    <Content Include="Views\Grafik\Index5.cshtml" />
+    <Content Include="Views\Grafik\Index6.cshtml" />
+    <Content Include="Views\Grafik\Index7.cshtml" />
+    <Content Include="Views\CariPanel\GelenMesajlar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\KargoDetay\" />
+    <Folder Include="Views\Mesaj\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -32,13 +32,29 @@ namespace E_ticaret_sitesi.Controllers
 
         public ActionResult GelenMesajlar()
         {
-            return View();
+            var mail = (string)Session["CariMail"];
+            var mesajlar = c.Mesajlars.Where(x=>x.Alıcı== mail).ToList();
+            var gelensayisi = c.Mesajlars.Count(x => x.Alıcı == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View(mesajlar);
+        }
+        public ActionResult GidenMesajlar()
+        {
+            var mail = (string)Session["CariMail"];
+            var mesajlar = c.Mesajlars.Where(x => x.Gonderici == mail).ToList();
+            var gelensayisi = c.Mesajlars.Count(x => x.Alıcı == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View(mesajlar);
         }
         //[HttpGet]
         //public ActionResult YeniMesaj()
         //{
         //    return View();
-            
+
         //}
         //[HttpPost]
         //public ActionResult YeniMesaj()

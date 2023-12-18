@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using E_ticaret_sitesi.Models.Siniflar;
 
 namespace E_ticaret_sitesi.Controllers
@@ -20,6 +21,7 @@ namespace E_ticaret_sitesi.Controllers
             ViewBag.m = mail;
             return View(degerler);
         }
+        [Authorize]
         public ActionResult Siparislerim()
         {
             var mail = (string)Session["CariMail"];//Session a sisteme girilen mail adresi atandı
@@ -30,6 +32,7 @@ namespace E_ticaret_sitesi.Controllers
             return View(degerler);
         }
 
+        [Authorize]
         public ActionResult GelenMesajlar()
         {
             var mail = (string)Session["CariMail"];
@@ -40,6 +43,7 @@ namespace E_ticaret_sitesi.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
+        [Authorize]
         public ActionResult GidenMesajlar()
         {
             var mail = (string)Session["CariMail"];
@@ -50,6 +54,7 @@ namespace E_ticaret_sitesi.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
+        [Authorize]
         public ActionResult MesajDetay(int id)
         {
             var degerler = c.Mesajlars.Where(x => x.MesajID == id).ToList();
@@ -61,8 +66,8 @@ namespace E_ticaret_sitesi.Controllers
             var gidensayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
             ViewBag.d2 = gidensayisi;
             return View(degerler);
-        }
-          
+        } 
+
         [HttpGet]
         public ActionResult YeniMesaj()
         {
@@ -88,6 +93,26 @@ namespace E_ticaret_sitesi.Controllers
             c.SaveChanges();
             return View();
 
+        }
+        public ActionResult KargoTakip(string p)
+        {
+
+            var k = from x in c.KargoDetays select x;
+            
+            k = k.Where(y => y.TakipKodu.Contains(p));
+            
+            return View(k.ToList());
+        }
+        public ActionResult CariKargoTakip(string id)
+        {
+            var degerler = c.KargoTakips.Where(x => x.TakipKodu == id).ToList();
+            return View(degerler);
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();//istekleri retk et
+            return RedirectToAction("Index", "Login");
         }
     }
 }

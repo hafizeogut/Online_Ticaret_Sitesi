@@ -50,17 +50,30 @@ namespace E_ticaret_sitesi.Controllers
             ViewBag.d2 = gidensayisi;
             return View(mesajlar);
         }
-        //[HttpGet]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
+        public ActionResult MesajDetay(int id)
+        {
+            var degerler = c.Mesajlars.Where(x => x.MesajID == id).ToList();
 
-        //}
-        //[HttpPost]
-        //public ActionResult YeniMesaj()
-        //{
-        //    return View();
+            var mail = (string)Session["CariMail"];
+            var mesajlar = c.Mesajlars.Where(x => x.Alıcı == mail).ToList();
+            var gelensayisi = c.Mesajlars.Count(x => x.Alıcı == mail).ToString();
+            ViewBag.d1 = gelensayisi;
+            var gidensayisi = c.Mesajlars.Count(x => x.Gonderici == mail).ToString();
+            ViewBag.d2 = gidensayisi;
+            return View(degerler);
+        }
+          
+        [HttpGet]
+        public ActionResult YeniMesaj()
+        {
+            return View();
 
-        //}
+        }
+        [HttpPost]
+        public ActionResult YeniMesaj(Mesajlar m)
+        {
+            return View();
+
+        }
     }
 }

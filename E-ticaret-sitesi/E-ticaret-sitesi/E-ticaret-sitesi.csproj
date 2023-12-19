@@ -239,6 +239,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\credit\mestro.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\paypal2.png" />
+    <Content Include="AdminLTE-3.0.4\dist\img\credit\usr.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\credit\visa.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\default-150x150.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\icons.png" />
@@ -259,6 +260,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\user6-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user7-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user8-128x128.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\usr.png" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\adminlte.min.js" />
     <Content Include="AdminLTE-3.0.4\dist\js\demo.js" />

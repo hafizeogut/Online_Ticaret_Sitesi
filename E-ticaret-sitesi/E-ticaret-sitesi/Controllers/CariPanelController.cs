@@ -17,8 +17,25 @@ namespace E_ticaret_sitesi.Controllers
         public ActionResult Index()
         {
             var mail = (string)Session["CariMail"];//Veri tabanındaki mail adresine ulaşıldı
-            var degerler = c.Carilers.FirstOrDefault(x => x.CariMail == mail);
+            var degerler = c.Mesajlars.Where(x => x.Alıcı == mail).ToList();
             ViewBag.m = mail;
+            var mailid = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.Cariid).FirstOrDefault();
+            ViewBag.mid = mailid;
+
+            //Toplamda kaç farklı satış yapıldı
+            var toplamSatis = c.SatisHarekets.Where(x => x.Cariid == mailid).Count();
+            ViewBag.toplamsatis = toplamSatis;
+
+            //toplam tutara ulaşıldı
+            var toplamtutar = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.ToplamTutar);
+            ViewBag.toplamtutar = toplamtutar;
+
+            //Toplam ürün sayısı
+            var toplamurunsayisi = c.SatisHarekets.Where(x => x.Cariid == mailid).Sum(y => y.Adet);
+            ViewBag.toplamurunsayisi = toplamurunsayisi;
+
+            var adsoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.adsoyad = adsoyad;
             return View(degerler);
         }
         [Authorize]

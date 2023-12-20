@@ -7,8 +7,10 @@ using E_ticaret_sitesi.Models.Siniflar;
 
 namespace E_ticaret_sitesi.Controllers
 {
+    [Authorize]
     public class DepartmanController : Controller
     {
+
         Context c = new Context();
         // GET: Departman
         public ActionResult Index()
@@ -17,6 +19,7 @@ namespace E_ticaret_sitesi.Controllers
             return View(degerler);
         }
         [HttpGet]//Sayfa Aöıldığında
+
         public ActionResult DepartmanEkle()
         {
             return View();

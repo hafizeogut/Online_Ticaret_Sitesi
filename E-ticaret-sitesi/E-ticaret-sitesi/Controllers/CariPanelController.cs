@@ -36,6 +36,7 @@ namespace E_ticaret_sitesi.Controllers
 
             var adsoyad = c.Carilers.Where(x => x.CariMail == mail).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
             ViewBag.adsoyad = adsoyad;
+
             return View(degerler);
         }
         [Authorize]
@@ -130,6 +131,29 @@ namespace E_ticaret_sitesi.Controllers
             FormsAuthentication.SignOut();
             Session.Abandon();//istekleri retk et
             return RedirectToAction("Index", "Login");
+        }
+        public PartialViewResult Partial1()
+        {
+            var mail = (string)Session["CariMail"];
+            var id = c.Carilers.Where(x => x.CariMail == mail).Select(Y => Y.Cariid).FirstOrDefault();
+
+            var caribul = c.Carilers.Find(id);
+            return PartialView("Partial1", caribul); 
+
+        }
+        public PartialViewResult Partial2()
+        {
+            var veriler = c.Mesajlars.Where(x => x.Gonderici == "admin").ToList();
+            return PartialView(veriler);
+        }
+        public ActionResult CariBilgiGuncelle(Cariler cr)
+        {
+            var cari = c.Carilers.Find(cr.Cariid);//kategoriId ye göre bulundu
+            cari.CariAd = cr.CariAd;
+            cari.CariSoyad = cr.CariSoyad;
+            cari.CariSifre = cr.CariSifre;
+            c.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

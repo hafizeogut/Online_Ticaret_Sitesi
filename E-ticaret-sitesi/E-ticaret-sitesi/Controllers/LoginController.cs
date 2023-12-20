@@ -8,6 +8,7 @@ using E_ticaret_sitesi.Models.Siniflar;
 
 namespace E_ticaret_sitesi.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login

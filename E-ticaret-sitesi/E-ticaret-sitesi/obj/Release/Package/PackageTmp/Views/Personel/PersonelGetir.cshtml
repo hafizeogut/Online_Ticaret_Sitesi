@@ -1,0 +1,45 @@
+﻿@model E_ticaret_sitesi.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Ornek/style.css">
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="~/Ornek/script.js"></script>
+
+<h2>Personel Güncelleme Ekranı</h2>
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.Personelid)
+
+    @Html.LabelFor(x => x.PersonelAd)
+    @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.PersonelSoyad)
+    @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.PersonelGorsel)
+    <input type="file" name="PersonelGorsel" id="fileInput" class="input-file" onchange="dosyaSecildi(this)" />
+    @*onchange özelliği yerine jQuery kullanarak on fonksiyonu ile dosya seçme alanına bir olay dinleyici eklenmiştir. 
+        $(document).ready içinde bu işlem gerçekleştirilir ve dosya seçme alanı değiştiğinde dosyaSecildi fonksiyonu çağrılır.*@
+    <br />
+
+    @Html.LabelFor(x => x.Departman)
+    @Html.DropDownListFor(x => x.Departmanid, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+
+
+    <br />
+
+
+    <button class=" btn btn-default" style=" background-color:seagreen">Güncelle</button>
+</div>
+}
+
+
+

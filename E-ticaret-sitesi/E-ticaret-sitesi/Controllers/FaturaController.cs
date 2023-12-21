@@ -89,6 +89,8 @@ namespace E_ticaret_sitesi.Controllers
             f.TeslimAlan = TeslimAlan;
             f.Toplam = decimal.Parse(Toplam);
             c.Faturalars.Add(f);
+
+            
             c.SaveChanges();
             return Json("İşlem Başarılı", JsonRequestBehavior.AllowGet);
 

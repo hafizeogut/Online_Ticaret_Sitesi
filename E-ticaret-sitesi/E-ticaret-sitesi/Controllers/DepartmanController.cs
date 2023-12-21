@@ -18,8 +18,9 @@ namespace E_ticaret_sitesi.Controllers
             var degerler = c.Departmans.Where(x => x.Durum == true).ToList();
             return View(degerler);
         }
+        [Authorize(Roles ="A")]
         [HttpGet]//Sayfa Aöıldığında
-
+  
         public ActionResult DepartmanEkle()
         {
             return View();

@@ -48,7 +48,7 @@
 
                     </tr>
 
-                    <tr>
+                    @*<tr>
 
                         <td colspan="4">
 
@@ -71,9 +71,9 @@
 
                                         var totalBill = 0;
 
-                                    } 
+                                    }
 
-                                    {
+                                   
                                         @foreach (var order in item.FaturaKalems)
 
                                         {
@@ -84,32 +84,33 @@
 
                                                 <td>@order.Miktar</td>
 
-                                               e <td>@order.BirimFiyat</td>
+                       
+                                                <td>@order.BirimFiyat</td>
                                                 <td>@order.Tutar</td>
 
                                             </tr>
 
                                             totalBill = totalBill + @Convert.ToInt32(order.Tutar);
 
-                                        
-                                    }
+
+                                        }
                                     </tbody>
+                                
+                                </table>
 
-                            </table>
+                                <span class="pull-right" style="margin-right:100px;"><strong>Fatura Toplam Tutar:  </strong> @totalBill</span>
 
-                            <span class="pull-right" style="margin-right:100px;"><strong>Fatura Toplam Tutar:  </strong> @totalBill</span>
+                            </td>
 
-                        </td>
+                        </tr>*@
 
-                    </tr>
+                    </tbody>
 
-                </tbody>
+                </table>
 
-            </table>
+            </div>
 
-        </div>
-
-    } 
+        }
 
 
 

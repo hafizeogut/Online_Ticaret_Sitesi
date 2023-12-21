@@ -334,13 +334,13 @@
 
                                             </td>
 
-                                            <td class="mailbox-star"><a href="#"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-star"><a href="/CariPanel/MesajDetay/@x.MesajID"><i class="fas fa-star text-warning"></i></a></td>
 
-                                            <td class="mailbox-name"><a href="read-mail.html">@x.Alıcı</a></td>
+                                            <td class="mailbox-name"><a href="/CariPanel/MesajDetay/@x.MesajID">@x.Alıcı</a></td>
 
                                             <td class="mailbox-subject">
 
-                                                <b>@x.Konu</b>- @x.icerik.Substring(0, 40).ToString()...
+                                                <b>@x.Konu</b>- @x.icerik.Substring(0, x.icerik.Length).ToString()  ..
 
                                             </td>
 

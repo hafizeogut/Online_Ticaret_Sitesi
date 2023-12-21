@@ -58,6 +58,7 @@ namespace E_ticaret_sitesi.Controllers
         {
             return View();
         } 
+
         public ActionResult YeniKalem(FaturaKalem p)
         {
             c.FaturaKalems.Add(p);
@@ -66,26 +67,27 @@ namespace E_ticaret_sitesi.Controllers
         }
         public ActionResult Dinamik()
         {
-            //bir sayfada birden fazla tablodan veri çekme işlemleri oıluşturuluyor
             Class4 cs = new Class4();
             cs.deger1 = c.Faturalars.ToList();
             cs.deger2 = c.FaturaKalems.ToList();
             return View(cs);
+
+
         }
-        public ActionResult FaturaKaydet(string FaturaSeriNo, string FaturaSıraNo,DateTime Tarih,
-            string VergiDairesi,string Saat,string TeslimEden,string TeslimAlan,string Toplam,FaturaKalem[] kalemler)
+        public ActionResult FaturaKaydet(string FaturaSeriNo, string FaturaSıraNo, DateTime Tarih,
+           string VergiDairesi, string Saat, string TeslimEden, string TeslimAlan, string Toplam, FaturaKalem[] kalemler)
         {
             Faturalar f = new Faturalar();
             f.FaturaSeriNo = FaturaSeriNo;
             f.FaturaSıraNo = FaturaSıraNo;
             f.Tarih = Tarih;
-            
+
             f.VergiDairesi = VergiDairesi;
 
             f.Saat = Saat;
             f.TeslimEden = TeslimEden;
             f.TeslimAlan = TeslimAlan;
-            f.Toplam =decimal.Parse( Toplam );
+            f.Toplam = decimal.Parse(Toplam);
             c.Faturalars.Add(f);
             c.SaveChanges();
             return Json("İşlem Başarılı", JsonRequestBehavior.AllowGet);

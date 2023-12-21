@@ -71,28 +71,29 @@
 
                                         var totalBill = 0;
 
-                                    }
-
-                                    @foreach (var order in item.FaturaKalems)
+                                    } 
 
                                     {
+                                        @foreach (var order in item.FaturaKalems)
 
-                                        <tr>
+                                        {
 
-                                            <td>@order.Aciklama</td>
+                                            <tr>
 
-                                            <td>@order.Miktar</td>
+                                                <td>@order.Aciklama</td>
 
-                                            <td>@order.BirimFiyat</td>
-                                            <td>@order.Tutar</td>
+                                                <td>@order.Miktar</td>
 
-                                        </tr>
+                                               e <td>@order.BirimFiyat</td>
+                                                <td>@order.Tutar</td>
 
-                                        totalBill = totalBill + @Convert.ToInt32(order.Tutar);
+                                            </tr>
 
+                                            totalBill = totalBill + @Convert.ToInt32(order.Tutar);
+
+                                        
                                     }
-
-                                </tbody>
+                                    </tbody>
 
                             </table>
 

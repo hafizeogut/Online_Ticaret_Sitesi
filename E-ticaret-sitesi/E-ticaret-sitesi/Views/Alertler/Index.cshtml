@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<br />
+<br />
+<button class="btn btn-primary" id="btn1">Buton1</button>
+<button class="btn btn-warning" id="btn2">Buton2</button>
+<button class="btn btn-info" id="btn3">Buton3</button>
+<button class="btn btn-danger" id="btn4">Buton4</button>
+<button class="btn btn-default" id="btn5">Buton5</button>
+
+<script>
+    $('#btn1').click(function () {
+
+        swal("Hello vorld");
+
+    });
+</script>
+<script>
+    $('#btn2').click(function () {
+
+        swal("HBaslik", "Metin");
+
+    });
+</script>
+<script>
+    $('#btn3').click(function () {
+
+        swal("HBaslik", "Metin", "success");
+
+    });
+</script>
+<script>
+    $('#btn4').click(function () {
+
+        swal("Hafize").then((value) => {
+            swal(`The returned value is: ${value}`);
+        });
+
+
+    });
+</script>
+<script>
+    $('#btn5').click(function () {
+
+        swal("HBaslik", "Metin", "success");
+
+    });
+</script>
+
+
+

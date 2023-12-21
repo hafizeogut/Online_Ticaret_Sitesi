@@ -13,11 +13,12 @@ namespace E_ticaret_sitesi.Models.Siniflar
         public int Cariid { get; set; }
 
         [Column(TypeName = "Varchar")]
-        [StringLength(30)]
+        [StringLength(30,ErrorMessage ="En fazla 30 Karakter Yazdırabilirsiniz")]
         public string CariAd { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+        [Required(ErrorMessage ="Bu alanı boş geçemezsiniz!")]
         public string CariSoyad { get; set; }
 
         [Column(TypeName = "Varchar")]
@@ -28,6 +29,11 @@ namespace E_ticaret_sitesi.Models.Siniflar
         [StringLength(50)]
         public string CariMail { get; set; }
 
-        public SatisHareket SatisHareket { get; set; }
+        [Column(TypeName = "Varchar")]
+        [StringLength(20)]
+        public string CariSifre { get; set; }
+
+        public bool Durum { get; set; }
+        public ICollection<SatisHareket> SatisHarekets { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace E_ticaret_sitesi.Models.Siniflar
 
         [Column(TypeName = "Char")]
         [StringLength(1)]
-        public char FaturaSeriNo { get; set; }
+        public string FaturaSeriNo { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(6)]
@@ -24,7 +24,10 @@ namespace E_ticaret_sitesi.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(60)]
         public string VergiDairesi { get; set; }
-        public DateTime Saat { get; set; }
+
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string Saat { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -33,6 +36,9 @@ namespace E_ticaret_sitesi.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string TeslimAlan { get; set; }
+
+
+        public decimal Toplam { get; set; }
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
     }
 }

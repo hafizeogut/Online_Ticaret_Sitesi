@@ -73,44 +73,44 @@
 
                                     }
 
-                                   
-                                        @foreach (var order in item.FaturaKalems)
 
-                                        {
+                                    @foreach (var order in item.FaturaKalems)
 
-                                            <tr>
+                                    {
 
-                                                <td>@order.Aciklama</td>
+                                        <tr>
 
-                                                <td>@order.Miktar</td>
+                                            <td>@order.Aciklama</td>
 
-                       
-                                                <td>@order.BirimFiyat</td>
-                                                <td>@order.Tutar</td>
-
-                                            </tr>
-
-                                            totalBill = totalBill + @Convert.ToInt32(order.Tutar);
+                                            <td>@order.Miktar</td>
 
 
-                                        }
-                                    </tbody>
-                                
-                                </table>
+                                            <td>@order.BirimFiyat</td>
+                                            <td>@order.Tutar</td>
 
-                                <span class="pull-right" style="margin-right:100px;"><strong>Fatura Toplam Tutar:  </strong> @totalBill</span>
+                                        </tr>
 
-                            </td>
+                                        totalBill = totalBill + @Convert.ToInt32(order.Tutar);
 
-                        </tr>*@
 
-                    </tbody>
+                                    }
+                                </tbody>
 
-                </table>
+                            </table>
 
-            </div>
+                            <span class="pull-right" style="margin-right:100px;"><strong>Fatura Toplam Tutar:  </strong> @totalBill</span>
 
-        }
+                        </td>
+
+                    </tr>*@
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    }
 
 
 

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using E_ticaret_sitesi.Models.Siniflar;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using E_ticaret_sitesi.Models.Siniflar;
 
 namespace E_ticaret_sitesi.Controllers
 {

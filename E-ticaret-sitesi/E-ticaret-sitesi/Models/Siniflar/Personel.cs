@@ -11,21 +11,26 @@ namespace E_ticaret_sitesi.Models.Siniflar
     {
         [Key]
         public int Personelid { get; set; }
-
+        [Display(Name = "Personel Adı")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string PersonelAd { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+
+        [Display(Name = "Personel Soyadı")]
         public string PersonelSoyad { get; set; }
 
+        [Display(Name = "Görsel")]
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string PersonelGorsel { get; set; }
 
-        public SatisHareket SatisHareket { get; set; }
-        public Departman Departman { get; set; }
+        public ICollection<SatisHareket> SatisHarekets { get; set; }
+
+        public int Departmanid { set; get; }
+        public virtual Departman Departman { get; set; }
 
     }
 }

@@ -27,8 +27,9 @@ namespace E_ticaret_sitesi.Models.Siniflar
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string UrunGorsel { get; set; }
-        public Kategori Kategori { get; set; } // her urunun sadece 1 tane kategorisi olduğundan bu tanımlama yapılmıştır.
-
-        public SatisHareket SatisHareket { get; set; }
+        public virtual Kategori Kategori { get; set; } // her urunun sadece 1 tane kategorisi olduğundan bu tanımlama yapılmıştır.
+        public int Kategoriid { set; get; }
+        //virtual türediği sınıfa ulaşım sağlandı.
+        public ICollection<SatisHareket> SatisHarekets { get; set; }
     }
 }

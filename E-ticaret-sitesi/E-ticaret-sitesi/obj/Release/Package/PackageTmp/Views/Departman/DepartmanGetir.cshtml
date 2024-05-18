@@ -1,0 +1,22 @@
+﻿@model E_ticaret_sitesi.Models.Siniflar.Departman
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<h2>Departman Güncelleme</h2>
+
+<br />
+@* Form Method post olduğunda çalış *@
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.DepartmanAd)
+        @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.Departmanid)
+        @* Gizli bir sekilde id alındı *@
+    </div>
+
+    <button class="btn btn-default " style="background-color:seagreen">Güncelle</button>
+}
